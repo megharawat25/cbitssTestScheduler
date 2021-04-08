@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Exam Scheduler Cbitss</string>
+    <string name="enter_registered_email_id">Enter Registered email Id</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Megha Rawat</string>
+    <string name="nav_header_subtitle">rawatmeghna88@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_logout">Logout</string>
+
+    <string name="menu_home">About Us</string>
+    <string name="menu_status">Status</string>
+    <string name="menu_about_us">About Us</string>
+    <string name="menu_privacy_policy">Privacy Policy</string>
+    <string name="menu_qr_code">QR Code</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_logout">Logout</string>
+
+</resources>

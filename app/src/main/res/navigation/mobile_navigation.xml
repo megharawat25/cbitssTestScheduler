@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.vikaskumar.examschedulercbitss.ui.logout.LogoutFragment"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/fragment_logout" />
+
+    <fragment
+        android:id="@+id/nav_about_us"
+        android:name="com.vikaskumar.examschedulercbitss.ui.aboutUs.AboutUsFragment"
+        android:label="@string/menu_about_us"
+        tools:layout="@layout/fragment_about_us" />
+
+    <fragment
+        android:id="@+id/nav_privacy_policy"
+        android:name="com.vikaskumar.examschedulercbitss.ui.privacypolicy.PrivacyPolicyFragment"
+        android:label="@string/menu_privacy_policy"
+        tools:layout="@layout/fragment_privacy_policy" />
+
+    <fragment
+        android:id="@+id/nav_qrcode"
+        android:name="com.vikaskumar.examschedulercbitss.ui.qrCode.QRCodeFragment"
+        android:label="@string/menu_qr_code"
+        tools:layout="@layout/fragment_qr_code" />
+
+</navigation>

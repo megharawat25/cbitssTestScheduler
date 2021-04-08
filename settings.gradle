@@ -1,0 +1,2 @@
+rootProject.name = "Exam Scheduler Cbitss"
+include ':app'
