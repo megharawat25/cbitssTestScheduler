@@ -1,4 +1,4 @@
-package com.vikaskumar.examschedulercbitss.ui.qrCode;
+package com.vikaskumar.examschedulercbitss.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,12 +10,13 @@ import androidx.fragment.app.Fragment;
 
 import com.vikaskumar.examschedulercbitss.R;
 
-public class QRCodeFragment extends Fragment {
+public class AboutUsFragment extends Fragment {
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_qr_code, container, false);
+        View view = inflater.inflate(R.layout.fragment_about_us, container, false);
 
         return view;
     }

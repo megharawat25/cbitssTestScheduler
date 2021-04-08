@@ -1,4 +1,4 @@
-package com.vikaskumar.examschedulercbitss.ui.logout;
+package com.vikaskumar.examschedulercbitss.Fragments;
 
 import android.os.Bundle;
 

@@ -21,7 +21,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.vikaskumar.examschedulercbitss.HomeActivity;
+import com.vikaskumar.examschedulercbitss.AdminActivity;
 import com.vikaskumar.examschedulercbitss.R;
 import com.vikaskumar.examschedulercbitss.User;
 
@@ -185,7 +185,7 @@ public class SignUpFragment extends Fragment {
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()) {
                                 dialog.dismiss();
-                                startActivity(new Intent(getActivity(), HomeActivity.class));
+                                startActivity(new Intent(getActivity(), AdminActivity.class));
                                 getActivity().finish();
                             } else {
                                 Toast.makeText(getActivity(), task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();

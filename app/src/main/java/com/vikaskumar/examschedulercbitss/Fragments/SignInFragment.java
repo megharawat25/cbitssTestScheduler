@@ -24,9 +24,11 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.vikaskumar.examschedulercbitss.AdminActivity;
-import com.vikaskumar.examschedulercbitss.HomeActivity;
+import com.vikaskumar.examschedulercbitss.MainActivity;
 import com.vikaskumar.examschedulercbitss.R;
 import com.vikaskumar.examschedulercbitss.RegisterActivity;
+
+import java.util.ArrayList;
 
 public class SignInFragment extends Fragment {
 
@@ -38,6 +40,8 @@ public class SignInFragment extends Fragment {
     private String emailStr, passStr;
     private Button login, forgotPassword;
     CheckBox student, instructor, scheduler;
+    private ArrayList<String> mResult;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +61,13 @@ public class SignInFragment extends Fragment {
         forgotPassword = view.findViewById(R.id.forgotPassword);
         auth = FirebaseAuth.getInstance();
         dialog = new ProgressDialog(getContext());
+
+        student = view.findViewById(R.id.check_student);
+        instructor = view.findViewById(R.id.check_instructor);
+        scheduler = view.findViewById(R.id.check_Scheduler);
+        mResult = new ArrayList<>();
+
+
         dialog.setMessage("Logging in...");
         return view;
     }
@@ -74,14 +85,13 @@ public class SignInFragment extends Fragment {
         });
 
         if(auth.getCurrentUser() != null) {
-            startActivity(new Intent(getActivity(), HomeActivity.class));
+            startActivity(new Intent(getActivity(), MainActivity.class));
             getActivity().finishAffinity();
         }
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //logInUser();
                 checkbox();
             }
         });
@@ -181,7 +191,7 @@ public class SignInFragment extends Fragment {
                         if (task.isSuccessful())
                         {
                             dialog.dismiss();
-                            startActivity(new Intent(getActivity(), HomeActivity.class));
+                            startActivity(new Intent(getActivity(), MainActivity.class));
                             getActivity().finish();
                         }
                         else {

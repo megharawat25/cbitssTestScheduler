@@ -12,7 +12,6 @@ public class User {
         this.pass = pass;
     }
 
-
     public String getName() {
         return name;
     }

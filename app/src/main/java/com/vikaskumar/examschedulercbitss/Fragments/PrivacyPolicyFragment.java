@@ -1,4 +1,4 @@
-package com.vikaskumar.examschedulercbitss.ui.aboutUs;
+package com.vikaskumar.examschedulercbitss.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,15 +10,13 @@ import androidx.fragment.app.Fragment;
 
 import com.vikaskumar.examschedulercbitss.R;
 
-public class AboutUsFragment extends Fragment {
-
+public class PrivacyPolicyFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_about_us, container, false);
+        View view = inflater.inflate(R.layout.fragment_privacy_policy, container, false);
 
         return view;
     }
-
 }
