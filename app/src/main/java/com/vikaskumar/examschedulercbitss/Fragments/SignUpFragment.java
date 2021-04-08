@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.vikaskumar.examschedulercbitss.AdminActivity;
 import com.vikaskumar.examschedulercbitss.R;
-import com.vikaskumar.examschedulercbitss.User;
+import com.vikaskumar.examschedulercbitss.Models.User;
 
 public class SignUpFragment extends Fragment {
     private Button alReadyAcc;

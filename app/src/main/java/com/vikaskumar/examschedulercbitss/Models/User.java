@@ -1,4 +1,4 @@
-package com.vikaskumar.examschedulercbitss;
+package com.vikaskumar.examschedulercbitss.Models;
 
 public class User {
     private String name, email, pass;
