@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.vikaskumar.examschedulercbitss">
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -13,37 +14,24 @@
         android:roundIcon="@drawable/cbitss"
         android:supportsRtl="true"
         android:theme="@style/Theme.ExamSchedulerCbitss">
-<<<<<<< HEAD
         <activity android:name=".CameraQRActivity"></activity>
         <activity android:name=".QRActivity" />
         <activity android:name=".InfoActivity" />
         <activity android:name=".PrivacyPolicy" />
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/Theme.ExamSchedulerCbitss.NoActionBar" />
+        <activity android:name=".MainActivity"/>
         <activity android:name=".AdminActivity" />
-        <activity android:name=".SplashScreen">
-=======
-        <activity android:name=".CategoriesActivity">
 
->>>>>>> 1de63dc1038e5b70ff59db8b4cc824159cb2165f
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/Theme.ExamSchedulerCbitss.NoActionBar"></activity>
-        <activity android:name=".AdminActivity" />
         <activity android:name=".SplashScreen">
 
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
+
+        <activity android:name=".CategoriesActivity"/>
+
         <activity android:name=".RegisterActivity" />
     </application>
-
 </manifest>
