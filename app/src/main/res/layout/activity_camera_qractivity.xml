@@ -1,9 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CameraQRActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="100dp" />
+
+    <TextView
+        android:id="@+id/textBarCodeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Bar Code Detected"
+        android:layout_alignParentTop="true"
+        android:textSize="30sp"
+        android:textColor="@color/theme"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/btnAction"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_box1"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:text="SCAN QR CODE"
+        android:layout_centerInParent="true"
+        android:textColor="@color/color_white"
+        android:textSize="16sp"
+        app:drawableLeftCompat="@drawable/qr_code_scanner_icon"
+        app:drawableTint="@color/color_white"
+        android:layout_alignParentBottom="true"
+        />
+
+
+</RelativeLayout>

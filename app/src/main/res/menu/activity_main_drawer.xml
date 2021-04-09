@@ -16,6 +16,23 @@
             android:id="@+id/info"
             android:icon="@drawable/about_us_icon"
             android:title="Info" />
+
+        <item
+            android:id="@+id/qrCode"
+            android:icon="@drawable/qr_code_scanner_icon"
+            android:title="QR Code" />
+
+        <item
+            android:id="@+id/privacy_policy"
+            android:icon="@drawable/privacy_policy_icon"
+            android:title="Privacy Policy" />
+
+        <item
+            android:id="@+id/contactUs"
+            android:icon="@drawable/email"
+            android:title="Contact Us" />
+
+
         <item
             android:id="@+id/share"
             android:icon="@drawable/share_icon"

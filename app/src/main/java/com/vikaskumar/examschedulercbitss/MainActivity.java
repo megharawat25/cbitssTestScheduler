@@ -4,12 +4,13 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -25,14 +26,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
-import com.vikaskumar.examschedulercbitss.Fragments.AboutUsFragment;
-import com.vikaskumar.examschedulercbitss.Fragments.HomeFragment;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -83,7 +78,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-
         if(id == R.id.action_logout)
         {
             firebaseAuth.signOut();
@@ -105,12 +99,65 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-//        int id = item.getItemId();
-//
-//        if (id == R.id.nav_home) {
-//            Intent intent = new Intent(MainActivity.this, HomeFragment.class);
-//            startActivity(intent);
-//        }
+     int id = item.getItemId();
+
+        if (id == R.id.share) {
+            try
+            {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, "Share Texting");
+                String shareMsg = "https://play.google.com/store/apps/details?id="+ BuildConfig.APPLICATION_ID+"\n";
+                intent.putExtra(Intent.EXTRA_TEXT, shareMsg);
+                startActivity(Intent.createChooser(intent, "ShareVia"));
+            }
+            catch (Exception e)
+            {
+                Toast.makeText(MainActivity.this, "Error"+e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
+        if (id == R.id.contactUs)
+        {
+            String[] TO_EMAILS = {"counselor.cbitss@gmail.com"};
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            intent.setData(Uri.parse("mailto:"));
+            intent.putExtra(Intent.EXTRA_EMAIL, TO_EMAILS);
+
+            intent.putExtra(Intent.EXTRA_SUBJECT, "this is the subject");
+            intent.putExtra(Intent.EXTRA_TEXT, "this is the body of email");
+
+            startActivity(Intent.createChooser(intent, "Choose one Application"));
+
+
+        }
+        if (id == R.id.qrCode)
+        {
+            Intent intent =  new Intent(MainActivity.this, QRActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        if (id == R.id.info)
+        {
+            Intent intent =  new Intent(MainActivity.this, InfoActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        if (id == R.id.privacy_policy)
+        {
+            Intent intent =  new Intent(MainActivity.this, PrivacyPolicy.class);
+            startActivity(intent);
+            finish();
+        }
+
+        if (id == R.id.logout)
+        {
+            firebaseAuth.signOut();
+            Intent intent = new Intent(MainActivity.this ,RegisterActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
