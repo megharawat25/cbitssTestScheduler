@@ -13,6 +13,7 @@
         android:roundIcon="@drawable/cbitss"
         android:supportsRtl="true"
         android:theme="@style/Theme.ExamSchedulerCbitss">
+<<<<<<< HEAD
         <activity android:name=".CameraQRActivity"></activity>
         <activity android:name=".QRActivity" />
         <activity android:name=".InfoActivity" />
@@ -23,11 +24,24 @@
             android:theme="@style/Theme.ExamSchedulerCbitss.NoActionBar" />
         <activity android:name=".AdminActivity" />
         <activity android:name=".SplashScreen">
+=======
+        <activity android:name=".CategoriesActivity">
+
+>>>>>>> 1de63dc1038e5b70ff59db8b4cc824159cb2165f
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.ExamSchedulerCbitss.NoActionBar"></activity>
+        <activity android:name=".AdminActivity" />
+        <activity android:name=".SplashScreen">
+
         </activity>
         <activity android:name=".RegisterActivity" />
     </application>
