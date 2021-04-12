@@ -7,11 +7,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class QRActivity extends AppCompatActivity {
     private TextView scan , invite;
+    private ImageView imageView;
 
 
     @Override
@@ -22,8 +24,15 @@ public class QRActivity extends AppCompatActivity {
         invite = findViewById(R.id.inviteSet);
         scan = findViewById(R.id.btnScanAction);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        imageView = findViewById(R.id.back);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(QRActivity.this, MainActivity.class));
+            }
+        });
+
 
 
         invite.setOnClickListener(new View.OnClickListener() {

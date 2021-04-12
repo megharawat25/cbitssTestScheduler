@@ -4,9 +4,10 @@
     package="com.vikaskumar.examschedulercbitss">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/cbitss"
@@ -14,24 +15,23 @@
         android:roundIcon="@drawable/cbitss"
         android:supportsRtl="true"
         android:theme="@style/Theme.ExamSchedulerCbitss">
-        <activity android:name=".CameraQRActivity"></activity>
+        <activity android:name=".CourseActivity"></activity>
+        <activity android:name=".StatusActivity" />
+        <activity android:name=".CameraQRActivity" />
         <activity android:name=".QRActivity" />
         <activity android:name=".InfoActivity" />
         <activity android:name=".PrivacyPolicy" />
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
         <activity android:name=".AdminActivity" />
-
         <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
-        <activity android:name=".CategoriesActivity"/>
-
+        <activity android:name=".CategoriesActivity" />
         <activity android:name=".RegisterActivity" />
     </application>
+
 </manifest>
