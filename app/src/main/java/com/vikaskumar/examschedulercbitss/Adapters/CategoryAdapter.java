@@ -1,7 +1,9 @@
 package com.vikaskumar.examschedulercbitss.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -11,8 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.vikaskumar.examschedulercbitss.CourseActivity;
 import com.vikaskumar.examschedulercbitss.Models.CategoryModel;
 import com.vikaskumar.examschedulercbitss.R;
+import com.vikaskumar.examschedulercbitss.ScheduleActivity;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -34,6 +38,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     @Override
     public CategoryAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new MyViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.category_item,parent,false));
+
+
     }
 
     @Override
@@ -41,12 +47,17 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         CategoryModel cm = catagoryModelList.get(position);
         holder.title.setText(cm.getTitle());
         Glide.with(context).load(cm.getUrl()).into(holder.image);
-        holder.next.setOnClickListener(new View.OnClickListener() {
+
+        holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent setIntent = new Intent(context, CourseActivity.class);
+                setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                setIntent.putExtra("title", cm.getTitle());
+                context.startActivity(setIntent);
             }
         });
+
     }
 
     @Override
@@ -63,9 +74,17 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-//            image = itemView.findViewById(R.id.category_img);
-//            next = itemView.findViewById(R.id.category_next);
-//            title = itemView.findViewById(R.id.text_view_title);
+            image = itemView.findViewById(R.id.category_img);
+            next = itemView.findViewById(R.id.category_next);
+            title = itemView.findViewById(R.id.text_view_title);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent  = new Intent(itemView.getContext(), CourseActivity.class);
+                    itemView.getContext().startActivity(intent);
+                }
+            });
         }
     }
 }

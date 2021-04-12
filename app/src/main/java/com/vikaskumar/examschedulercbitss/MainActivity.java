@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -24,15 +26,24 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.vikaskumar.examschedulercbitss.Adapters.CategoryAdapter;
+import com.vikaskumar.examschedulercbitss.Models.CategoryModel;
+import com.vikaskumar.examschedulercbitss.Utility.NeTWorkChange;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
     FirebaseAuth firebaseAuth;
+    private RecyclerView recyclerView;
+    NeTWorkChange neTWorkChange = new NeTWorkChange();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,16 +53,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
         firebaseAuth = FirebaseAuth.getInstance();
 
+        recyclerView = findViewById(R.id.recycler_view);
+
+        List<CategoryModel> list = new ArrayList<>();
+        list.add(new CategoryModel("IT Cources", R.drawable.cbitss));
+        list.add(new CategoryModel("Accounting", R.drawable.cbitss));
+        list.add(new CategoryModel("English", R.drawable.cbitss));
+        list.add(new CategoryModel("Project", R.drawable.cbitss));
+        list.add(new CategoryModel("Certification", R.drawable.cbitss));
+        LinearLayoutManager manager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(manager);
+
+        CategoryAdapter categoryAdapter = new CategoryAdapter(list, getApplicationContext());
+        recyclerView.setAdapter(categoryAdapter);
+
         // RecyclerView
-        RecyclerView mRecyclerView = findViewById(R.id.recyclerView);
-// Set its Properties
-//grid view with 2 columns in each row
+        RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
+        // Set its Properties
+        //grid view with 2 columns in each row
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-// Adapter
+        // Adapter
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -80,13 +104,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         if(id == R.id.action_logout)
         {
-            firebaseAuth.signOut();
-            Intent intent = new Intent(MainActivity.this ,RegisterActivity.class);
-            startActivity(intent);
-            finish();
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Logout");
+            builder.setIcon(R.drawable.exit_to_app_24);
+            builder.setMessage("Are You Sure Want to Logout?")
+                    .setNegativeButton("No", null)
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            firebaseAuth.signOut();
+                            Intent intent = new Intent(MainActivity.this ,RegisterActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }).show();
         }
         return true;
-
     }
 
     @Override
@@ -101,6 +135,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
      int id = item.getItemId();
 
+     if (id== R.id.nav_status)
+     {
+         Intent intent =  new Intent(MainActivity.this, StatusActivity.class);
+         startActivity(intent);
+         finish();
+
+     }
         if (id == R.id.share) {
             try
             {
@@ -128,7 +169,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             startActivity(Intent.createChooser(intent, "Choose one Application"));
 
-
         }
         if (id == R.id.qrCode)
         {
@@ -151,12 +191,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.logout)
         {
-            firebaseAuth.signOut();
-            Intent intent = new Intent(MainActivity.this ,RegisterActivity.class);
-            startActivity(intent);
-            finish();
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Logout");
+            builder.setIcon(R.drawable.exit_to_app_24);
+            builder.setMessage("Are You Sure Want to Logout?")
+                    .setNegativeButton("No", null)
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            firebaseAuth.signOut();
+                            Intent intent = new Intent(MainActivity.this ,RegisterActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }).show();
         }
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -167,6 +216,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("EXIT");
+        builder.setIcon(R.drawable.exit_to_app_24);
         builder.setMessage("Are You Sure Want to Exit?")
                 .setNegativeButton("No", null)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -175,5 +225,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         finishAffinity();
                     }
                 }).show();
+    }
+
+    @Override
+    protected void onStart() {
+        IntentFilter intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(neTWorkChange, intentFilter);
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        unregisterReceiver(neTWorkChange);
+        super.onStop();
     }
 }
