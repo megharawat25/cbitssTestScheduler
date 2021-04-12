@@ -16,6 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
         <ImageView
             android:id="@+id/back"
+<<<<<<< HEAD
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:src="@drawable/back_24"
@@ -24,6 +25,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+=======
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/back_24"
+            app:tint="@color/white"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+>>>>>>> 745906c0773128f130f1372a4c270b4f0ad5a0c5
             android:layout_gravity="center"
             android:text="Info"
             android:textSize="20sp"

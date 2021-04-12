@@ -3,6 +3,7 @@ package com.vikaskumar.examschedulercbitss.Adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -15,6 +16,7 @@ import com.bumptech.glide.Glide;
 import com.vikaskumar.examschedulercbitss.CourseActivity;
 import com.vikaskumar.examschedulercbitss.Models.CategoryModel;
 import com.vikaskumar.examschedulercbitss.R;
+import com.vikaskumar.examschedulercbitss.ScheduleActivity;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -46,10 +48,17 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         holder.title.setText(cm.getTitle());
         Glide.with(context).load(cm.getUrl()).into(holder.image);
 
+<<<<<<< HEAD
         holder.next.setOnClickListener(new View.OnClickListener() {
+=======
+        holder.image.setOnClickListener(new View.OnClickListener() {
+>>>>>>> 745906c0773128f130f1372a4c270b4f0ad5a0c5
             @Override
             public void onClick(View v) {
-
+                Intent setIntent = new Intent(context, CourseActivity.class);
+                setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                setIntent.putExtra("title", cm.getTitle());
+                context.startActivity(setIntent);
             }
         });
 

@@ -66,17 +66,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         CategoryAdapter categoryAdapter = new CategoryAdapter(list, getApplicationContext());
         recyclerView.setAdapter(categoryAdapter);
 
-
         // RecyclerView
         RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
 // Set its Properties
-//grid view with 2 columns in each row
+        //grid view with 2 columns in each row
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-// Adapter
+        // Adapter
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -105,13 +103,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         if(id == R.id.action_logout)
         {
-            firebaseAuth.signOut();
-            Intent intent = new Intent(MainActivity.this ,RegisterActivity.class);
-            startActivity(intent);
-            finish();
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Logout");
+            builder.setIcon(R.drawable.exit_to_app_24);
+            builder.setMessage("Are You Sure Want to Logout?")
+                    .setNegativeButton("No", null)
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            firebaseAuth.signOut();
+                            Intent intent = new Intent(MainActivity.this ,RegisterActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }).show();
         }
         return true;
-
     }
 
     @Override
@@ -159,6 +167,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             intent.putExtra(Intent.EXTRA_TEXT, "this is the body of email");
 
             startActivity(Intent.createChooser(intent, "Choose one Application"));
+
         }
         if (id == R.id.qrCode)
         {
@@ -181,12 +190,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.logout)
         {
-            firebaseAuth.signOut();
-            Intent intent = new Intent(MainActivity.this ,RegisterActivity.class);
-            startActivity(intent);
-            finish();
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Logout");
+            builder.setIcon(R.drawable.exit_to_app_24);
+            builder.setMessage("Are You Sure Want to Logout?")
+                    .setNegativeButton("No", null)
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            firebaseAuth.signOut();
+                            Intent intent = new Intent(MainActivity.this ,RegisterActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }).show();
         }
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

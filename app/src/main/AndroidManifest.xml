@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ExamSchedulerCbitss">
         <activity android:name=".CourseActivity"></activity>
+        <activity android:name=".ScheduleActivity"></activity>
         <activity android:name=".StatusActivity" />
         <activity android:name=".CameraQRActivity" />
         <activity android:name=".QRActivity" />

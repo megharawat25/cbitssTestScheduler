@@ -55,8 +55,11 @@
         android:textStyle="bold"
         android:padding="15dp"
         android:background="@drawable/button_2"
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 745906c0773128f130f1372a4c270b4f0ad5a0c5
         />
 
 </LinearLayout>
