@@ -95,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Choose Date"
+                android:text="Choose Exam Date"
                 android:textColor="@color/theme"
                 android:textSize="23sp"
                 android:textStyle="bold" />
@@ -130,7 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Course Time"
+                android:text="Choose Exam Time"
                 android:textColor="@color/theme"
                 android:textSize="23sp"
                 android:textStyle="bold" />

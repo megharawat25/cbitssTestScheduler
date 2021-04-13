@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
@@ -44,6 +45,13 @@ public class CourseActivity extends AppCompatActivity{
 //        courseTime = findViewById(R.id.sp_time);
 //        datePick  =findViewById(R.id.date_pick);
 //        button = findViewById(R.id.submit);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(CourseActivity.this, ScheduleActivity.class));
+//                finish();
+//            }
+//        });
 //
 //        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spinner_item, android.R.layout.simple_list_item_1);
 //        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
