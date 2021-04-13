@@ -104,8 +104,6 @@ public class CourseActivity extends AppCompatActivity{
             }
         });
     }
-
-=======
         gridView = findViewById(R.id.course_rcv);
         CourseAdapter adapter1 = new CourseAdapter(1);
         gridView.setAdapter(adapter1);
@@ -136,5 +134,4 @@ public class CourseActivity extends AppCompatActivity{
 //        status = findViewById(R.id.et_status);
 
     }
->>>>>>> b50da9c57b53ec83b3a1a4750d0d6fba80a094c4
 }
