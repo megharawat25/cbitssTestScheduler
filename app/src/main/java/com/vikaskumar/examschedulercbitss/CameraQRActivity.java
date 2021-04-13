@@ -41,7 +41,6 @@ public class CameraQRActivity extends AppCompatActivity {
         surfaceView = findViewById(R.id.surfaceView);
         textBarCodeValue = findViewById(R.id.textBarCodeValue);
         btnAction = findViewById(R.id.btnAction);
-        getSupportActionBar().hide();
 
         btnAction.setOnClickListener(new View.OnClickListener() {
             @Override

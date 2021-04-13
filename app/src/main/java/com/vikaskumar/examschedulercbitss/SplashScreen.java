@@ -27,7 +27,7 @@ public class SplashScreen extends AppCompatActivity {
 
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
 
 
         topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);

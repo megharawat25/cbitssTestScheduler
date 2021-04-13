@@ -18,25 +18,12 @@ import java.util.List;
 
 public class CategoriesActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
-        recyclerView = findViewById(R.id.recycler_view);
 
-        List<CategoryModel> list = new ArrayList<>();
-        list.add(new CategoryModel("IT Cources", R.drawable.cbitss));
-        list.add(new CategoryModel("Accounting", R.drawable.cbitss));
-        list.add(new CategoryModel("English", R.drawable.cbitss));
-        list.add(new CategoryModel("Project", R.drawable.cbitss));
-        list.add(new CategoryModel("Certification", R.drawable.cbitss));
-        LinearLayoutManager manager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(manager);
-
-        CategoryAdapter categoryAdapter = new CategoryAdapter(list, getApplicationContext());
-        recyclerView.setAdapter(categoryAdapter);
     }
 
     @Override
