@@ -25,5 +25,13 @@ public class StatusActivity extends AppCompatActivity {
             }
         });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 745906c0773128f130f1372a4c270b4f0ad5a0c5
+>>>>>>> b50da9c57b53ec83b3a1a4750d0d6fba80a094c4
     }
 }

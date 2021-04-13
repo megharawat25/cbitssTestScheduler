@@ -65,10 +65,11 @@ public class SignInFragment extends Fragment {
         student = view.findViewById(R.id.check_student);
         instructor = view.findViewById(R.id.check_instructor);
         scheduler = view.findViewById(R.id.check_Scheduler);
+
         mResult = new ArrayList<>();
-
-
         dialog.setMessage("Logging in...");
+        dialog.setIcon(R.drawable.backicon);
+
         return view;
     }
 

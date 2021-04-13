@@ -46,9 +46,21 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     public void onBindViewHolder(@NotNull CategoryAdapter.MyViewHolder holder, int position) {
         CategoryModel cm = catagoryModelList.get(position);
         holder.title.setText(cm.getTitle());
-        Glide.with(context).load(cm.getUrl()).into(holder.image);
+<<<<<<< HEAD
+        Glide.with(context).load(cm.getUrl())
+                .placeholder(R.drawable.cbitss)
+                .into(holder.image);
 
         holder.image.setOnClickListener(new View.OnClickListener() {
+=======
+        Glide.with(context).load(cm.getUrl()).into(holder.image);
+
+<<<<<<< HEAD
+        holder.next.setOnClickListener(new View.OnClickListener() {
+=======
+        holder.image.setOnClickListener(new View.OnClickListener() {
+>>>>>>> 745906c0773128f130f1372a4c270b4f0ad5a0c5
+>>>>>>> b50da9c57b53ec83b3a1a4750d0d6fba80a094c4
             @Override
             public void onClick(View v) {
                 Intent setIntent = new Intent(context, CourseActivity.class);
@@ -74,7 +86,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+<<<<<<< HEAD
+            image = itemView.findViewById(R.id.category_img_course);
+=======
             image = itemView.findViewById(R.id.category_img);
+>>>>>>> b50da9c57b53ec83b3a1a4750d0d6fba80a094c4
             next = itemView.findViewById(R.id.category_next);
             title = itemView.findViewById(R.id.text_view_title);
 

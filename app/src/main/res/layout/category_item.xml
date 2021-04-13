@@ -2,6 +2,69 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="10dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:padding="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/catagory_border"
+            android:elevation="5dp"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="90dp"
+                android:id="@+id/category_img"
+                android:layout_height="90dp"
+                android:src="@drawable/cbitss"
+                android:layout_gravity="center"
+                app:civ_border_color="@color/theme"
+                app:civ_border_width="2dp"/>
+
+            <TextView
+                android:id="@+id/text_view_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/category_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/category_arrow"
+                app:tint="@color/black" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
+=======
+>>>>>>> b50da9c57b53ec83b3a1a4750d0d6fba80a094c4
     android:background="@drawable/catagory_border"
     android:orientation="horizontal"
     android:layout_weight="12"
@@ -10,7 +73,11 @@
     android:layout_height="wrap_content">
 
             <de.hdodenhof.circleimageview.CircleImageView
+<<<<<<< HEAD
+                android:id="@+id/category_img_course"
+=======
                 android:id="@+id/category_img"
+>>>>>>> b50da9c57b53ec83b3a1a4750d0d6fba80a094c4
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:src="@drawable/cbitss"
@@ -43,3 +110,7 @@
                 app:tint="@color/black" />
 
         </LinearLayout>
+<<<<<<< HEAD
+=======
+>>>>>>> 745906c0773128f130f1372a4c270b4f0ad5a0c5
+>>>>>>> b50da9c57b53ec83b3a1a4750d0d6fba80a094c4

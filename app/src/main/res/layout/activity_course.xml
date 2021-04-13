@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+=======
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> b50da9c57b53ec83b3a1a4750d0d6fba80a094c4
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,13 +11,219 @@
     android:orientation="vertical"
     tools:context=".CourseActivity">
 
+<<<<<<< HEAD
+    <ScrollView
+        android:id="@+id/scrollView4"
+        android:layout_width="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/buenard_bold"
+                android:text="Schedule Your Exam"
+                android:textColor="@color/red"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Name"
+                android:textColor="@color/theme"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Full name"
+                android:background="@drawable/textbox"
+                android:gravity="center"
+                android:padding="12dp"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Course ID"
+                android:textColor="@color/theme"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/et_course_id"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Course ID"
+                android:background="@drawable/textbox"
+                android:gravity="center"
+                android:padding="12dp"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Course Name"
+                android:textColor="@color/theme"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/textbox"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/sp_course_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                </Spinner>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Choose Date"
+                android:textColor="@color/theme"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/textbox"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:hint="DD/MM/YY"
+                    android:inputType="date"
+                    android:textColorHighlight="#fff"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/date_pick"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_baseline_date_range_24"
+                    app:tint="@color/black" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Course Time"
+                android:textColor="@color/theme"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/textbox"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/sp_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                </Spinner>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Trainer Name"
+                android:textColor="@color/theme"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/et_trainer_name"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Trainer Name"
+                android:background="@drawable/textbox"
+                android:gravity="center"
+                android:padding="12dp"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Status"
+                android:textColor="@color/theme"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/et_status"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Approved/pending"
+                android:background="@drawable/textbox"
+                android:gravity="center"
+                android:padding="12dp"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/submit"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="@color/red"
+                android:textAlignment="center"
+                android:text="Submit"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:padding="10dp"
+                android:textColor="#fff"/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+=======
     <GridView
         android:id="@+id/course_rcv"
         android:gravity="start"
         android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
     </GridView>
 
 </LinearLayout>
+>>>>>>> b50da9c57b53ec83b3a1a4750d0d6fba80a094c4
 
