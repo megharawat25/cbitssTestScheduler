@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+=======
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> b50da9c57b53ec83b3a1a4750d0d6fba80a094c4
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +11,7 @@
     android:orientation="vertical"
     tools:context=".CourseActivity">
 
+<<<<<<< HEAD
     <ScrollView
         android:id="@+id/scrollView4"
         android:layout_width="match_parent"
@@ -209,4 +214,16 @@
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+    <GridView
+        android:id="@+id/course_rcv"
+        android:gravity="start"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </GridView>
+
+</LinearLayout>
+>>>>>>> b50da9c57b53ec83b3a1a4750d0d6fba80a094c4
 

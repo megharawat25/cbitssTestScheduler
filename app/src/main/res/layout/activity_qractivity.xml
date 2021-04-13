@@ -14,6 +14,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_24"
+            app:tint="@color/white"
+            android:layout_marginTop="15dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+=======
+>>>>>>> b50da9c57b53ec83b3a1a4750d0d6fba80a094c4
 
         <ImageView
             android:id="@+id/back"
@@ -26,6 +41,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="30dp"
+<<<<<<< HEAD
+=======
+>>>>>>> 745906c0773128f130f1372a4c270b4f0ad5a0c5
+>>>>>>> b50da9c57b53ec83b3a1a4750d0d6fba80a094c4
             android:layout_gravity="center"
             android:text="QR Code"
             android:textSize="20sp"

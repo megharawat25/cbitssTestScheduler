@@ -15,8 +15,13 @@
         android:roundIcon="@drawable/cbitss"
         android:supportsRtl="true"
         android:theme="@style/Theme.ExamSchedulerCbitss">
+<<<<<<< HEAD
         <activity android:name=".ScheduleActivity"></activity>
         <activity android:name=".CourseActivity" />
+=======
+        <activity android:name=".CourseActivity"></activity>
+        <activity android:name=".ScheduleActivity"></activity>
+>>>>>>> b50da9c57b53ec83b3a1a4750d0d6fba80a094c4
         <activity android:name=".StatusActivity" />
         <activity android:name=".CameraQRActivity" />
         <activity android:name=".QRActivity" />

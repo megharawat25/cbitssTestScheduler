@@ -50,8 +50,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+      //  setSupportActionBar(toolbar);
         firebaseAuth = FirebaseAuth.getInstance();
+        recyclerView = findViewById(R.id.recycler_view);
+
+        List<CategoryModel> list = new ArrayList<>();
+        list.add(new CategoryModel("IT Cources", R.drawable.cbitss));
+        list.add(new CategoryModel("Accounting", R.drawable.cbitss));
+        list.add(new CategoryModel("English", R.drawable.cbitss));
+        list.add(new CategoryModel("Project", R.drawable.cbitss));
+        list.add(new CategoryModel("Certification", R.drawable.cbitss));
+        LinearLayoutManager manager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(manager);
+
+        CategoryAdapter categoryAdapter = new CategoryAdapter(list, getApplicationContext());
+        recyclerView.setAdapter(categoryAdapter);
 
         recyclerView = findViewById(R.id.recycler_view);
 
@@ -69,7 +82,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         // RecyclerView
         RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
+<<<<<<< HEAD
         // Set its Properties
+=======
+// Set its Properties
+>>>>>>> b50da9c57b53ec83b3a1a4750d0d6fba80a094c4
         //grid view with 2 columns in each row
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
